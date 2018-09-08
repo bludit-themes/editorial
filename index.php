@@ -22,33 +22,38 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="<?php echo $Site->url() ?>" class="logo">
-				<strong><?php echo $Site->title() ?></strong> <?php echo $Site->slogan() ?>
+			<a href="<?php echo $site->url() ?>" class="logo">
+				<strong><?php echo $site->title() ?></strong> <?php echo $site->slogan() ?>
 			</a>
+
+			<!-- Social Networks -->
+			<?php
+				$socialNetworks = array(
+					// Key => Label
+					'github'=>'Github',
+					'twitter'=>'Twitter',
+					'facebook'=>'Facebook',
+					'googleplus'=>'Google Plus',
+					'instagram'=>'Instagram',
+					'codepen'=>'Codepen',
+					'linkedin'=>'Linkedin'
+				);
+			?>
+
 			<ul class="icons">
+				<?php foreach ($socialNetworks as $key=>$label): ?>
+					<?php if ($site->{$key}()): ?>
+						<li><a href="<?php echo $site->{$key}() ?>" class="icon fa-<?php echo $key ?>"><span class="label"><?php echo $label ?></span></a></li>
+					<?php endif; ?>
+				<?php endforeach; ?>
 				<?php
-        	    			if ($Site->twitter()) {
-						echo '<li><a href="'.$Site->twitter().'" class="icon fa-twitter"><span class="label">Twitter</span></a></li>';
-					}
-					if ($Site->facebook()) {
-						echo '<li><a href="'.$Site->facebook().'" class="icon fa-facebook"><span class="label">Facebook</span></a></li>';
-					}
-					if ($Site->instagram()) {
-						echo '<li><a href="'.$Site->instagram().'" class="icon fa-instagram"><span class="label">Instagram</span></a></li>';
-					}
-					if ($Site->github()) {
-						echo '<li><a href="'.$Site->github().'" class="icon fa-github"><span class="label">Github</span></a></li>';
-					}
-					if ($Site->codepen()) {
-						echo '<li><a href="'.$Site->codepen().'" class="icon fa-codepen"><span class="label">Codepen</span></a></li>';
-					}
 					// Check if the plugin RSS is enabled
-					if (pluginEnabled('RSS')) {
-						echo '<li><a href="'.$Site->rss().'" class="icon fa-rss"><span class="label">RSS</span></a></li>';
+					if (pluginActivated('pluginRSS')) {
+						echo '<li><a href="'.$site->rss().'" class="icon fa-rss"><span class="label">RSS</span></a></li>';
 					}
 					// Check if the plugin Sitemap is enabled
-					if (pluginEnabled('sitemap')) {
-						echo '<li><a href="'.$Site->sitemap().'" class="icon fa-sitemap"><span class="label">Sitemap</span></a></li>';
+					if (pluginActivated('pluginSitemap')) {
+						echo '<li><a href="'.$site->sitemap().'" class="icon fa-sitemap"><span class="label">Sitemap</span></a></li>';
 					}
 				?>
 			</ul>
