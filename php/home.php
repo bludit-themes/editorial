@@ -8,7 +8,7 @@
                         <p><?php echo $firstPage->description() ?></p>
                 </header>
 
-		<p><?php echo $page->content(false) ?></p>
+		<p><?php echo $page->contentBreak() ?></p>
 
 		<!-- Read more button -->
 		<?php if($firstPage->readMore()): ?>
@@ -30,7 +30,7 @@
                         <a href="<?php echo $page->permalink() ?>" class="image"><img src="<?php echo $page->coverImage() ?>" alt="" /></a>
                         <h3><?php echo $page->title() ?></h3>
 
-			<p><?php echo $page->content(false) ?></p>
+			<p><?php echo $page->contentBreak() ?></p>
 
 			<!-- Read more button -->
 			<?php if($firstPage->readMore()): ?>
