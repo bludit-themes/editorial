@@ -33,7 +33,6 @@
 					'github'=>'Github',
 					'twitter'=>'Twitter',
 					'facebook'=>'Facebook',
-					'googleplus'=>'Google Plus',
 					'instagram'=>'Instagram',
 					'codepen'=>'Codepen',
 					'linkedin'=>'Linkedin'

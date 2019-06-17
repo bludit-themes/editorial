@@ -13,7 +13,7 @@
 		<!-- Read more button -->
 		<?php if($firstPage->readMore()): ?>
 		<ul class="actions">
-			<li><a href="<?php echo $firstPage->permalink() ?>" class="button"><?php $Language->p('More') ?></a></li>
+			<li><a href="<?php echo $firstPage->permalink() ?>" class="button"><?php $language->p('More') ?></a></li>
 		</ul>
 		<?php endif; ?>
         </div>
@@ -35,7 +35,7 @@
 			<!-- Read more button -->
 			<?php if($firstPage->readMore()): ?>
 			<ul class="actions">
-					<li><a href="<?php echo $page->permalink() ?>" class="button"><?php $Language->p('More') ?></a></li>
+					<li><a href="<?php echo $page->permalink() ?>" class="button"><?php $language->p('More') ?></a></li>
 			</ul>
 			<?php endif; ?>
                 </article>
