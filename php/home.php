@@ -33,7 +33,7 @@
 			<p><?php echo $page->contentBreak() ?></p>
 
 			<!-- Read more button -->
-			<?php if($firstPage->readMore()): ?>
+			<?php if($fpage->readMore()): ?>
 			<ul class="actions">
 					<li><a href="<?php echo $page->permalink() ?>" class="button"><?php $language->p('More') ?></a></li>
 			</ul>
