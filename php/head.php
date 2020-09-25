@@ -11,10 +11,12 @@
 <!-- Include Favicon -->
 <?php echo Theme::favicon('assets/favicon.png'); ?>
 
+<!-- Link to Google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
 <!-- Include CSS Styles from this theme -->
 <?php
 	echo Theme::css(array(
-		'assets/font-awesome/css/font-awesome.min.css',
 		'assets/css/main.css',
 		'assets/css/bludit.css'
 	));

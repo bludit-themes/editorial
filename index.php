@@ -7,7 +7,7 @@
 <head>
 <?php include(THEME_DIR_PHP.'head.php') ?>
 </head>
-<body>
+<body class="is-preload">
 
 <?php 	// Load plugins
 	Theme::plugins('siteBodyBegin');
@@ -42,7 +42,7 @@
 			<ul class="icons">
 				<?php foreach ($socialNetworks as $key=>$label): ?>
 					<?php if ($site->{$key}()): ?>
-						<li><a href="<?php echo $site->{$key}() ?>" class="icon fa-<?php echo $key ?>"><span class="label"><?php echo $label ?></span></a></li>
+						<li><a href="<?php echo $site->{$key}() ?>" class="icon brands fa-<?php echo $key ?>"><span class="label"><?php echo $label ?></span></a></li>
 					<?php endif; ?>
 				<?php endforeach; ?>
 				<?php
@@ -81,9 +81,9 @@
 <!-- Scripts -->
 <?php
 	echo Theme::javascript('assets/js/jquery.min.js');
-	echo Theme::javascript('assets/js/skel.min.js');
+	echo Theme::javascript('assets/js/browser.min.js');
+	echo Theme::javascript('assets/js/breakpoints.min.js');
 	echo Theme::javascript('assets/js/util.js');
-	echo '<!--[if lte IE 8]>'.Theme::javascript('assets/js/ie/respond.min.js').'<![endif]-->';
 	echo Theme::javascript('assets/js/main.js');
 ?>
 
