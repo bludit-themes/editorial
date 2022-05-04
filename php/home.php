@@ -25,9 +25,11 @@
 			</ul>
 			<?php endif; ?>
         </div>
-        <span class="image object">
-                <img src="<?php echo $firstPage->coverImage() ?>" alt="" />
-        </span>
+	<?php if($firstPage->coverImage()){ ?>
+        	<span class="image object">
+                	<img src="<?php echo $firstPage->coverImage() ?>" alt="" />
+        	</span>
+	<?php } ?>
 </section>
 
 <?php endif ?>
